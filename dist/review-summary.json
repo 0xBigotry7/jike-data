@@ -1,0 +1,397 @@
+{
+  "planned_research_tasks": 37,
+  "completed_research_tasks": 37,
+  "observations": 427,
+  "csv_rows": 75,
+  "price_observations": 87,
+  "comparison_candidates": 68,
+  "wholesale_candidates": 3,
+  "barcode_present": 31,
+  "barcode_format_valid": 31,
+  "source_revisited_observations": 45,
+  "duplicate_observations": 3,
+  "multi_supplier_candidate_groups_all_rounds": 1,
+  "flag_counts": {
+    "超过一年历史记录": 21,
+    "成都配送未获明示": 424,
+    "二手来源": 24,
+    "计价单位未明确": 6,
+    "引用既有资料": 23,
+    "无标准化价格": 340,
+    "来源日期未知或不完整": 397,
+    "SKU未完全锁定": 9,
+    "仅搜索摘要": 290,
+    "采购历史或招投标记录": 5,
+    "证据不确定": 3,
+    "需人工核规格或价格": 3,
+    "同来源同品规报价重复": 3,
+    "临期清仓或失效条件": 3,
+    "结算或参考价条件待确认": 1,
+    "来源URL未在原始日志精确匹配": 2
+  },
+  "errors": [],
+  "tasks": [
+    {
+      "task_id": 100,
+      "observations": 4,
+      "queries": 12,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 4
+    },
+    {
+      "task_id": 101,
+      "observations": 2,
+      "queries": 12,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 102,
+      "observations": 3,
+      "queries": 12,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 3
+    },
+    {
+      "task_id": 103,
+      "observations": 2,
+      "queries": 12,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 104,
+      "observations": 62,
+      "queries": 11,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 62
+    },
+    {
+      "task_id": 105,
+      "observations": 168,
+      "queries": 11,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 168
+    },
+    {
+      "task_id": 106,
+      "observations": 21,
+      "queries": 11,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 21
+    },
+    {
+      "task_id": 107,
+      "observations": 5,
+      "queries": 11,
+      "search_calls": 3,
+      "open_calls": 1,
+      "raw_files": 4,
+      "raw_observations": 5
+    },
+    {
+      "task_id": 108,
+      "observations": 4,
+      "queries": 16,
+      "search_calls": 5,
+      "open_calls": 0,
+      "raw_files": 5,
+      "raw_observations": 4
+    },
+    {
+      "task_id": 109,
+      "observations": 2,
+      "queries": 4,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 2
+    },
+    {
+      "task_id": 110,
+      "observations": 2,
+      "queries": 4,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 2
+    },
+    {
+      "task_id": 111,
+      "observations": 2,
+      "queries": 4,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 2
+    },
+    {
+      "task_id": 112,
+      "observations": 2,
+      "queries": 4,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 2
+    },
+    {
+      "task_id": 76,
+      "observations": 15,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 1,
+      "raw_files": 1,
+      "raw_observations": 15
+    },
+    {
+      "task_id": 77,
+      "observations": 15,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 1,
+      "raw_files": 1,
+      "raw_observations": 15
+    },
+    {
+      "task_id": 78,
+      "observations": 2,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 1,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 79,
+      "observations": 2,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 1,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 80,
+      "observations": 2,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 1,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 81,
+      "observations": 3,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 1,
+      "raw_observations": 3
+    },
+    {
+      "task_id": 82,
+      "observations": 3,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 1,
+      "raw_observations": 3
+    },
+    {
+      "task_id": 83,
+      "observations": 15,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 1,
+      "raw_files": 1,
+      "raw_observations": 15
+    },
+    {
+      "task_id": 84,
+      "observations": 12,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 1,
+      "raw_files": 1,
+      "raw_observations": 12
+    },
+    {
+      "task_id": 85,
+      "observations": 10,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 1,
+      "raw_files": 1,
+      "raw_observations": 10
+    },
+    {
+      "task_id": 86,
+      "observations": 14,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 1,
+      "raw_files": 1,
+      "raw_observations": 14
+    },
+    {
+      "task_id": 87,
+      "observations": 14,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 1,
+      "raw_files": 1,
+      "raw_observations": 14
+    },
+    {
+      "task_id": 88,
+      "observations": 6,
+      "queries": 4,
+      "search_calls": 1,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 6
+    },
+    {
+      "task_id": 89,
+      "observations": 6,
+      "queries": 4,
+      "search_calls": 1,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 6
+    },
+    {
+      "task_id": 90,
+      "observations": 2,
+      "queries": 4,
+      "search_calls": 1,
+      "open_calls": 0,
+      "raw_files": 1,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 2
+    },
+    {
+      "task_id": 91,
+      "observations": 2,
+      "queries": 4,
+      "search_calls": 1,
+      "open_calls": 0,
+      "raw_files": 1,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 2
+    },
+    {
+      "task_id": 92,
+      "observations": 4,
+      "queries": 4,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 4
+    },
+    {
+      "task_id": 93,
+      "observations": 2,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 94,
+      "observations": 1,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 95,
+      "observations": 4,
+      "queries": 4,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 4
+    },
+    {
+      "task_id": 96,
+      "observations": 2,
+      "queries": 8,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "raw_observations": 2
+    },
+    {
+      "task_id": 97,
+      "observations": 2,
+      "queries": 4,
+      "search_calls": 2,
+      "open_calls": 0,
+      "raw_files": 2,
+      "query_history_note": "仅列已恢复搜索式，可能未覆盖全部早期调用；未补造查询",
+      "raw_observations": 2
+    },
+    {
+      "task_id": 98,
+      "observations": 5,
+      "queries": 11,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 5
+    },
+    {
+      "task_id": 99,
+      "observations": 5,
+      "queries": 8,
+      "search_calls": 3,
+      "open_calls": 0,
+      "raw_files": 3,
+      "raw_observations": 5
+    }
+  ],
+  "multi_supplier_candidates": [
+    {
+      "key": "exact:芬达橙味|500mlx24瓶",
+      "unit": "元/瓶",
+      "observations": [
+        "37:O01",
+        "37:O03"
+      ],
+      "suppliers": [
+        "四川金盛德供应链管理连锁有限公司/安逸购",
+        "安徽天长网电子商务有限公司/掌合天长"
+      ],
+      "status": "机械匹配候选，供应商独立性和条件待核"
+    }
+  ],
+  "excluded_observations": {
+    "94:94-02": "泛化供货列表URL未在原始返回中找到，且未提供明确商品证据；不进入发布资料"
+  }
+}
