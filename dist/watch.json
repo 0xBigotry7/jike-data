@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-12T04:59:46Z",
+  "generated_at": "2026-09-12T05:12:17Z",
   "sources": [
     {
       "id": "seven11-chengdu-products",
@@ -9,7 +9,7 @@
       "category": "竞品成品/零售基准",
       "data_role": "site_snapshot",
       "status": "error",
-      "last_checked": "2026-09-12T04:59:46Z",
+      "last_checked": "2026-09-12T05:12:17Z",
       "error": "blocked_by_robots",
       "change_type": "error"
     },
@@ -20,8 +20,8 @@
       "category": "全国食材趋势",
       "data_role": "list",
       "status": "ok",
-      "last_checked": "2026-09-12T04:59:46Z",
-      "last_success": "2026-09-12T04:59:46Z",
+      "last_checked": "2026-09-12T05:12:17Z",
+      "last_success": "2026-09-12T05:12:17Z",
       "content_hash": "9b7ba27b0bcd7465f85f7b95d07cce742a289b9f408c0de805a8c38ee5a83d6e",
       "source_date": null,
       "title": "商务预报",
@@ -64,7 +64,7 @@
           "url": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040102700091"
         }
       ],
-      "change_type": "initial"
+      "change_type": "unchanged"
     },
     {
       "id": "moa-wholesale-monitor-list",
@@ -73,8 +73,8 @@
       "category": "全国批发价格趋势",
       "data_role": "list",
       "status": "ok",
-      "last_checked": "2026-09-12T04:59:46Z",
-      "last_success": "2026-09-12T04:59:46Z",
+      "last_checked": "2026-09-12T05:12:17Z",
+      "last_success": "2026-09-12T05:12:17Z",
       "content_hash": "bb5c2987f3415957962ac03ecd1f3ef739ba4de9ecdbe7e0d96ac8305d4d0e38",
       "source_date": null,
       "title": "首页-监测预警",
@@ -165,7 +165,7 @@
           "url": "https://scs.moa.gov.cn/jcyj/202608/t20260818_6486750.htm"
         }
       ],
-      "change_type": "initial"
+      "change_type": "unchanged"
     },
     {
       "id": "lawson-china-news",
@@ -174,8 +174,8 @@
       "category": "竞品品牌公告",
       "data_role": "list",
       "status": "ok",
-      "last_checked": "2026-09-12T04:59:46Z",
-      "last_success": "2026-09-12T04:59:46Z",
+      "last_checked": "2026-09-12T05:12:17Z",
+      "last_success": "2026-09-12T05:12:17Z",
       "content_hash": "cbe7a247c4b0d33358921be5b1a29d5fff19d2faddcb002456dea59a4b521178",
       "source_date": null,
       "title": "新闻在线｜LAWSON 中国罗森",
@@ -266,7 +266,7 @@
           "url": "https://www.chinalawson.com.cn/news/179"
         }
       ],
-      "change_type": "initial"
+      "change_type": "unchanged"
     }
   ],
   "failures": [
@@ -274,7 +274,7 @@
       "id": "seven11-chengdu-products",
       "name": "成都7-Eleven商品列表",
       "url": "https://www.7-11cd.cn/product/",
-      "checked_at": "2026-09-12T04:59:46Z",
+      "checked_at": "2026-09-12T05:12:17Z",
       "error": "blocked_by_robots"
     }
   ],
@@ -309,6 +309,36 @@
       "unchanged_count": 0,
       "changed_count": 0,
       "initial_count": 3
+    },
+    {
+      "checked_at": "2026-09-12T05:12:17Z",
+      "sources": [
+        {
+          "id": "seven11-chengdu-products",
+          "status": "error",
+          "change_type": "error"
+        },
+        {
+          "id": "mofcom-food-weekly-list",
+          "status": "ok",
+          "change_type": "unchanged"
+        },
+        {
+          "id": "moa-wholesale-monitor-list",
+          "status": "ok",
+          "change_type": "unchanged"
+        },
+        {
+          "id": "lawson-china-news",
+          "status": "ok",
+          "change_type": "unchanged"
+        }
+      ],
+      "success_count": 3,
+      "failure_count": 1,
+      "unchanged_count": 3,
+      "changed_count": 0,
+      "initial_count": 0
     }
   ]
 }
