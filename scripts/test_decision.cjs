@@ -39,7 +39,9 @@ for (const [kind,count,columns] of [['inquiry',4,14],['visit',51,15],['fresh',22
 console.log('Cost validation and three worksheet exports passed.');
 
 const now=Date.parse('2026-09-12T05:00:00Z');
-const sample={sku:'P01',shop:'验证门店',area:'验证地址',collector:'QA',observed:'2026-09-12T12:00',barcode:'6901234567890',price:'3',promo:'',terms:'',proof:'IMG-01',matched:true};
+const localPast=new Date(now-3600000);
+const observedLocal=new Date(localPast.getTime()-localPast.getTimezoneOffset()*60000).toISOString().slice(0,16);
+const sample={sku:'P01',shop:'验证门店',area:'验证地址',collector:'QA',observed:observedLocal,barcode:'6901234567890',price:'3',promo:'',terms:'',proof:'IMG-01',matched:true};
 assert.ok(context.validateVisit(sample,now).ok);
 for(const patch of [{shop:''},{barcode:'abcd'},{price:'0'},{promo:'2',terms:''},{observed:'2099-01-01T10:00'},{matched:false},{proof:''}]) assert.ok(context.validateVisit({...sample,...patch},now).error);
 const good={status:'success'},bad={status:'blocked_by_robots'};
