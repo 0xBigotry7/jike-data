@@ -18,13 +18,16 @@
 - 同 SKU/规格/来源/交易期比对，保留 new/revisit/correction/unchanged；多来源不是多个 SKU，原报价没变不能写成降价。来源日期、采集日期、商品生产日期和报价有效期分开。
 - 原始候选保存在研究目录；报告编号从当前最大编号递增，末尾有“数据缺口”表。经复核、适合公开的记录才增量加入 `dist/incremental.json` 和报告库。一次最多 3 条首页重点：写清事实、对集刻的可能影响、可执行步骤及证据边界。不足 3 条就少展示，不强凑。
 - `signals.json` 是已复核编辑线索，`watch.json` 是机器正文变化；不能混成已确认商业事件。累计采集审计写入 `monitor/runs/`，记录实际查了什么、新增/重访/排除数量、失败原因和下一轮缺口。
-- 运行采集器单测、JSON/CSV 校验、前端语法检查；涉及布局时验证 390px 和桌面，以及筛选/详情/下载。无新结论只留运行记录，不重写首页。
+- 首页交付配置为 `dist/missions.json`。新的复核结论需要同时更新交付内容、实际复核日期、引用 ID 和 `expected_records` / `expected_signals` 原字段快照。逐项核对事实、已完成步骤、下一步条件和来源边界；只有真正复核后才更新日期。不能仅改日期来解除过期状态。无新结论不强凑任务；过期交付可保留为历史，或归档后用更有用的任务替换。
+- 每项交付的“已完成的工作”是可核查的研究步骤，不是模型推理过程，不得模拟实时运行。报价变动、区域/条件/日期/证据修订、引用缺失和超过 7 天未复核都会使旧判断降级。前端只是对本地快照匹配，不代表来源网站没有其他变更。正文监测仍独立呈现实际覆盖与失败。
+- 运行采集器单测、JSON/CSV 校验、前端语法检查和 `node scripts/test_missions.cjs`；涉及布局时验证 390px 和桌面，以及交付切换/详情/下载/核价回填。无新结论只留运行记录，不重写首页。
 - 发布用户已授权的公开项目文件到 GitHub 仓库 `0xBigotry7/jike-data` main，经 Pages 部署至 `https://jike-data.sailinglabs.cn/`。优先使用已连接 GitHub 工具，若无 git 推送凭证可使用 create_tree / create_commit / update_ref。必须以最新远端为 parent，禁止强推、禁止覆盖其他未审改动，禁止提交凭证、私有 KB 或原始未审候选。确认部署成功后再说已上线。
 - 仅在有有用的新证据、需要处理的持续失败或需要用户行动时通知；状态无变化保持安静。
 
 ## 文件口径
 
 - `dist/decision.js` / `.css`：客户行动页面；`workbench.js` 保留完整证据搜索。
+- `dist/agent-workspace.js` / `.css` 和 `missions.json`：AI 工作交付首页。集团与店长按任务适用范围查看；任务处理状态和核价草稿只存本设备。用户填写的测算必须标明非平台核验，不能自动变成 AI 已验证结论。没有对话后端、共享任务分派或执行回执。
 - `dist/incremental.json`：第六轮起的已复核增量观察，使用现有记录字段与 `origin: round6`；重复关系及观察时间保留。
 - `dist/signals.json`：编辑精选，包含 `checked_at`、`items`、每项 `source_date` / `collected_at` / `source_url` / `region` / `evidence` / `action` / `boundary`。
 - `dist/watch.json`：实际采集健康状态、历史与正文差异。不能用手工时间伪造采集运行。

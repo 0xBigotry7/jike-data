@@ -64,13 +64,14 @@ if(!costSession.drafts||typeof costSession.drafts!=='object'||Array.isArray(cost
 if(typeof costSession.selected!=='string')costSession.selected='';
 function costDraft(){const value=costSession.drafts[costSession.selected];return value&&typeof value==='object'&&!Array.isArray(value)?value:{}}
 function saveCostDraft(){const draft=Object.fromEntries([...costFields.map(x=>x[0]),'unit','supplier','validity','quote-proof','current-proof'].map(k=>[k,document.getElementById('cost-'+k)?.value||'']));draft.confirmed=!!document.getElementById('cost-confirmed')?.checked;costSession.drafts[costSession.selected]=draft;try{localStorage.setItem('everymart-cost-v2',JSON.stringify(costSession));document.getElementById('cost-save-status').textContent='草稿已存本设备；不上传、不跨设备同步。'}catch{document.getElementById('cost-save-status').textContent='浏览器未允许保存，请先导出测算。'}}
-function comparisonState(today=localDateTime().slice(0,10)){
- if(!document.getElementById('cost-current')?.value)return {allowed:false,reason:'填写现行到店单价后可比较。'};
- if(!document.getElementById('cost-confirmed')?.checked)return {allowed:false,reason:'请先确认同商品、零售单位、税务和成都配送口径。'};
+function comparisonState(today=localDateTime().slice(0,10), draft){
+ const value=k=>draft?String(draft[k]??''):document.getElementById('cost-'+k)?.value||'';
+ if(!value('current'))return {allowed:false,reason:'填写现行到店单价后可比较。'};
+ if(!(draft?draft.confirmed===true:document.getElementById('cost-confirmed')?.checked))return {allowed:false,reason:'请先确认同商品、零售单位、税务和成都配送口径。'};
  const required=[['supplier','本次供货商'],['validity','报价有效日期'],['quote-proof','本次报价凭证'],['current-proof','现行价凭证']];
- const missing=required.filter(([k])=>!document.getElementById('cost-'+k)?.value?.trim());
+ const missing=required.filter(([k])=>!value(k).trim());
  if(missing.length)return {allowed:false,reason:'比较还需：'+missing.map(x=>x[1]).join('、')+'。'};
- const validity=document.getElementById('cost-validity').value;
+ const validity=value('validity');
  if(!/^\d{4}-\d{2}-\d{2}$/.test(validity)||!Number.isFinite(Date.parse(validity))||validity<today)return {allowed:false,reason:'本次报价已过期或日期无效，请重新确认。'};
  return {allowed:true,reason:'按用户确认的交易条件比较，凭证尚未独立核验。'};
 }
@@ -91,8 +92,8 @@ products=function(){
  document.getElementById('clear-cost').onclick=()=>{delete costSession.drafts[costSession.selected];try{localStorage.setItem('everymart-cost-v2',JSON.stringify(costSession))}catch{}products();document.getElementById('cost-save-status').textContent='当前商品草稿已清空。';document.getElementById('cost-sku').focus()};
  updateCost(false);
 };
-function costResult(){
- const keys=costFields.map(x=>x[0]);const v=Object.fromEntries(keys.map(k=>[k,document.getElementById('cost-'+k)?.value??'']));
+function costResult(draft){
+ const keys=costFields.map(x=>x[0]);const v=Object.fromEntries(keys.map(k=>[k,draft?String(draft[k]??'').trim():document.getElementById('cost-'+k)?.value??'']));
  const missing=keys.slice(0,4).filter(k=>v[k]==='');if(missing.length)return {incomplete:true,fields:missing,error:'还需填写：'+missing.map(k=>costFields.find(x=>x[0]===k)[1]).join('、')+'。'};
  const invalid=keys.filter(k=>v[k]!==''&&(!Number.isFinite(Number(v[k]))||Number(v[k])<0));if(invalid.length)return {fields:invalid,error:'请填写有效的非负数字。'};
  const n=Object.fromEntries(keys.map(k=>[k,v[k]===''?null:Number(v[k])]));

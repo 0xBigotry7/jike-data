@@ -1,6 +1,6 @@
-# 集刻 every mart · 经营情报台
+# 集刻 every mart · AI 经营助理
 
-面向集团运营与门店店长的静态研究工作台。目标域名：https://jike-data.sailinglabs.cn 。
+面向集团运营与门店店长的持续研究交付界面，采用静态网页发布。目标域名：https://jike-data.sailinglabs.cn 。
 
 ## 运行
 
@@ -10,7 +10,7 @@
 python3 -m http.server 4173 --directory dist
 ```
 
-打开 http://localhost:4173/ 。主入口为经营简报、采购核价、动态监测、门店行动和研究资料；完整商品库、品类配额、竞对档案与供应渠道从资料页进入。
+打开 http://localhost:4173/ 。主入口为 AI 工作台、采购核价、持续跟踪、现场验证和证据档案；完整商品库、品类配额、竞对档案与供应渠道从资料页进入。
 
 ## 部署
 
@@ -32,7 +32,7 @@ GitHub 仓库 Settings → Pages → Source 选择 **GitHub Actions**。推送 `
 
 门店可从 50 项清单录入现场价格，校验门店、地址、采集人、时间、条码、目标规格及证据编号；有促销价必须填条件。支持本设备保存、编辑恢复、撤销删除和 CSV 导出。没有后台、跨设备同步或集团自动回收；请将导出的 CSV 与照片另行交回集团。浏览器清理会丢失本地记录，最多保留 200 条。
 
-首页所需业务 JSON 为 40,821 字节（未压缩），原先需要 2,252,261 字节；监测 JSON 独立加载，完整研究按需打开。大资料加载失败不覆盖正在使用的工具，可重试。
+首页核心商品、采价模板与报告索引为 40,821 字节（未压缩）；另载入工作交付配置、精选线索和实际监测记录，完整研究按需打开。大资料加载失败不覆盖正在使用的工具，可重试。
 
 验证命令：
 
@@ -40,6 +40,9 @@ GitHub 仓库 Settings → Pages → Source 选择 **GitHub Actions**。推送 `
 python3 -m unittest discover -s scripts -p 'test_*.py'
 node scripts/test_decision.cjs
 node scripts/test_loading.cjs
+node scripts/test_missions.cjs
 ```
 
 持续采集机制与发布边界见 `monitor/OPERATIONS.md`。三轮优化记录见 `docs/UI-REVIEW-20260912.md`。
+
+AI 工作交付与能力边界见 `docs/AI-NATIVE-PRODUCT.md`。首页只展示已发布研究，未连接实时模型对话后端。客户核价回填和个人待办仅保存在本设备；继续研究时需要按维护协议复核引用并更新交付。

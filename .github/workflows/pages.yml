@@ -37,8 +37,10 @@ jobs:
           node --check dist/mobile.js
           node --check dist/decision.js
           node --check dist/workbench.js
+          node --check dist/agent-workspace.js
           node scripts/test_decision.cjs
           node scripts/test_loading.cjs
+          node scripts/test_missions.cjs
       - name: Check public sources
         run: python3 scripts/collect_watch.py
       - name: Save observed source state
