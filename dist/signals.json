@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-09-12",
+  "items": [
+    {
+      "id": "117-004",
+      "kind": "成都竞对",
+      "title": "罗森把快闪店带到成都漫展",
+      "source_date": "2026-09-11",
+      "collected_at": "2026-09-12",
+      "region": "成都；活动时间与适用门店待核",
+      "source_url": "https://www.chinalawson.com.cn/news",
+      "evidence": "中国罗森官方新闻列表刊出“成都罗森快闪店亮相COMIDAY漫展”。本轮已确认标题及刊登日期，详情页未取得。",
+      "evidence_short": "9 月 11 日，官方刊出成都 COMIDAY 快闪店消息。可以跟进主题商品与活动场景，活动时间仍待核。",
+      "action": "先核活动日期与是否仍在售，再安排同商圈主题商品和陈列观察。",
+      "boundary": "刊登日期不是活动发生日；未获得具体商品、售价、客流或全门店适用清单。不据此直接增加库存。",
+      "show_on_home": true
+    },
+    {
+      "id": "118-001",
+      "kind": "食材行情",
+      "title": "食用农产品周价小幅上行，先核报价有效期",
+      "source_date": "2026-09-10",
+      "collected_at": "2026-09-12",
+      "region": "全国；统计期 8 月 31 日至 9 月 6 日",
+      "source_url": "https://cif.mofcom.gov.cn/cif/listIndex.fhtml?nodeid=62",
+      "evidence": "商务部公开周报摘要显示，8 月 31 日至 9 月 6 日全国食用农产品市场价格比前一周上涨 0.2%。",
+      "evidence_short": "最新检出的商务部周报：8/31–9/6 全国食用农产品价格环比 +0.2%。这是采购环境信号。",
+      "action": "本周鲜食询价同时记录有效日期，向供应商核对本次变价涉及哪些原料。",
+      "boundary": "全国综合指数，不能推出成都烤肠、包子或具体门店的成本涨幅；不据此自动上调售价。",
+      "show_on_home": true
+    },
+    {
+      "id": "117-001-night",
+      "kind": "夜间服务",
+      "title": "红旗披露云值守突破千家，可增加夜间服务观察",
+      "source_date": "2026-07-11",
+      "collected_at": "2026-09-12",
+      "region": "红旗公司整体；非成都单独口径",
+      "source_url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-07-11/c25507fa-7bb1-4be8-8eff-10b4faea2ea6.PDF",
+      "evidence": "红旗半年度业绩预告披露 24 小时云值守门店突破千家，红旗优生活“本地送”上线。",
+      "action": "在既定巡店中增加夜间服务、热食可得和应急日用品观察，先选一家同商圈门店。",
+      "boundary": "7 月历史披露，本轮补充检索；千家不是成都店数，也不能证明夜间服务带来利润增长。",
+      "show_on_home": false
+    }
+  ]
+}

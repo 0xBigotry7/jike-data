@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 
 permissions:
   contents: read
@@ -17,11 +19,34 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      - name: Verify collector
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Verify decision tools
+        run: |
+          node --check dist/decision.js
+          node --check dist/workbench.js
+          node scripts/test_decision.cjs
+      - name: Check public sources
+        run: python3 scripts/collect_watch.py
+      - name: Save observed source state
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add dist/watch.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh public source observations'
+            git push origin HEAD:main
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

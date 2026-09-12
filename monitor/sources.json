@@ -1,0 +1,36 @@
+[
+  {
+    "id": "seven11-chengdu-products",
+    "name": "成都7-Eleven商品列表",
+    "category": "竞品成品/零售基准",
+    "data_role": "site_snapshot",
+    "url": "https://www.7-11cd.cn/product/",
+    "date_mode": "body"
+  },
+  {
+    "id": "mofcom-food-weekly-list",
+    "name": "商务部农副产品动态列表",
+    "category": "全国食材趋势",
+    "data_role": "list",
+    "url": "https://cif.mofcom.gov.cn/cif/listIndex.fhtml?nodeid=62",
+    "date_mode": "none"
+  },
+  {
+    "id": "moa-wholesale-monitor-list",
+    "name": "农业农村部农产品批发价格监测预警列表",
+    "category": "全国批发价格趋势",
+    "data_role": "list",
+    "url": "https://scs.moa.gov.cn/jcyj/",
+    "date_mode": "none",
+    "item_pattern": "/jcyj/\\d{6}/"
+  },
+  {
+    "id": "lawson-china-news",
+    "name": "罗森中国新闻在线",
+    "category": "竞品品牌公告",
+    "data_role": "list",
+    "url": "https://www.chinalawson.com.cn/news",
+    "date_mode": "none",
+    "item_pattern": "/news/\\d+"
+  }
+]
