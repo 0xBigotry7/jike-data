@@ -33,9 +33,12 @@ jobs:
         run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Verify decision tools
         run: |
+          node --check dist/app.js
+          node --check dist/mobile.js
           node --check dist/decision.js
           node --check dist/workbench.js
           node scripts/test_decision.cjs
+          node scripts/test_loading.cjs
       - name: Check public sources
         run: python3 scripts/collect_watch.py
       - name: Save observed source state

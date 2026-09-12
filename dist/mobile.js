@@ -1,7 +1,12 @@
 // Keep one accessible set of records; adapt their presentation on small screens.
 function prepareMobileTables(root) {
   root.querySelectorAll('table').forEach(table => {
-    if (table.closest('.report-document') || table.classList.contains('coverage-table')) return;
+    if (table.closest('.report-document')) {
+      const wrap = table.closest('.table-wrap');
+      if (wrap && !wrap.classList.contains('mobile-scroll-table')) wrap.classList.add('mobile-scroll-table');
+      return;
+    }
+    if (table.classList.contains('coverage-table')) return;
     const headings = Array.from(table.querySelectorAll('thead th'), cell => cell.textContent.trim());
     if (!headings.length) return;
     table.classList.add('mobile-cards');
@@ -17,6 +22,15 @@ const mobileObserver = new MutationObserver(() => {
 mobileObserver.observe(document.getElementById('main'), {childList:true, subtree:true});
 mobileObserver.observe(document.getElementById('dialog-body'), {childList:true, subtree:true});
 prepareMobileTables(document);
+function syncRolePressed() {
+  document.querySelectorAll('[data-role]').forEach(button => {
+    button.setAttribute('aria-pressed', button.classList.contains('active') ? 'true' : 'false');
+  });
+}
+syncRolePressed();
+document.addEventListener('click', event => {
+  if (event.target.closest('[data-role]')) requestAnimationFrame(syncRolePressed);
+});
 function alignMobileNavigation() {
   if (!matchMedia('(max-width: 820px)').matches) return;
   const nav = document.querySelector('.sidebar nav');
