@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const context={URL,console,overview(){},location:{href:'https://example.com/#overview'},labels:{},document:{querySelector(){return null},addEventListener(){}},escapeHtml:s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;'),fmt:String,group:r=>r.category,records:[],libraryReady:false,libraryError:true,main:{},ensureLibrary(){throw Error('unexpected automatic retry')}};
+vm.createContext(context);vm.runInContext(fs.readFileSync('dist/data-desk.js','utf8'),context);
+assert.equal(context.deskHasPrice({raw_price:null,normalized_price:' '}),false);
+assert.equal(context.deskHasPrice({raw_price:0}),true);
+assert.equal(context.deskHasPrice({raw_price:'需登录'}),false);
+assert.match(context.deskPrice({origin:'legacy',raw_prices:{'批发价高':'26'}}),/26/);
+assert.match(context.deskPrice({origin:'legacy',raw_prices:{'零售价':0}}),/0/);
+assert.match(context.deskPrice({origin:'legacy',raw_prices:{'零售价':'<img>'}}),/&lt;img>/);
+assert.equal(context.deskDate({collected_at:'未标注',source_date:'2026-09-11'}),'2026-09-11');
+context.records=[{sku:'未知',category:'水饮',source_date:'未标注',raw_price:10},{sku:'新茶',category:'水饮',collected_at:'2026-09-12',raw_price:12},{sku:'饼干',category:'零食'}];
+assert.equal(context.deskRows()[0].sku,'新茶');
+vm.runInContext("deskCategory='水饮';deskSearch='新茶'",context);assert.equal(context.deskRows().length,1);
+const metrics=context.deskMetrics([{source_url:'https://www.example.com/a',raw_price:12},{source_url:'https://example.com/b',duplicate_of:'id'},{source_url:'javascript:evil',barcode:'123',barcode_format_valid:true}]);
+assert.equal(metrics.count,3);assert.equal(metrics.sites,1);assert.equal(metrics.linked,1);assert.equal(metrics.priced,1);assert.equal(metrics.barcode,1);
+context.overview();assert.match(context.main.innerHTML,/完整数据暂未载入/);assert.doesNotMatch(context.main.innerHTML,/研究观察/);
+console.log('Data desk: metric denominators, missing dates, filters, escaping, historical prices and partial-load guard passed');

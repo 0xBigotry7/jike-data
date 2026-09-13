@@ -6,7 +6,7 @@ function prepareMobileTables(root) {
       if (wrap && !wrap.classList.contains('mobile-scroll-table')) wrap.classList.add('mobile-scroll-table');
       return;
     }
-    if (table.classList.contains('coverage-table')) return;
+    if (table.classList.contains('coverage-table') || table.classList.contains('desk-table')) return;
     const headings = Array.from(table.querySelectorAll('thead th'), cell => cell.textContent.trim());
     if (!headings.length) return;
     table.classList.add('mobile-cards');
