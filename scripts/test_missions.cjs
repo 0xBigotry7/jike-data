@@ -26,7 +26,7 @@ context.fixture=catalogue;context.signalFixture=signals;
 vm.runInContext('editorialData=signalFixture; missionCatalogue=fixture.missions; missionLoadState="ready";',context);
 const [tea,lawson]=catalogue.missions;
 assert.equal(context.validMissionData(catalogue),true);
-for(const m of catalogue.missions) assert.equal(context.missionIntegrity(m).valid,true,m.id);
+for(const m of catalogue.missions) assert.equal(context.missionIntegrity(m,observations,signals.items,Date.parse(m.reviewed_at+'T12:00:00Z')).valid,true,m.id);
 const clone=x=>JSON.parse(JSON.stringify(x));
 for(const field of ['raw_price','conditions','region','source_date','evidence','source_url','record_status']){
  const changed=clone(observations);changed.find(r=>r.id==='116-01')[field]='changed';

@@ -374,5 +374,30 @@
       "发布年份未独立核实",
       "与快闪店的同一性未确认"
     ]
+  },
+  {
+    "id": "120-001",
+    "task_id": 120,
+    "origin": "round6",
+    "record_kind": "event",
+    "task_kind": "market",
+    "sku": "蔬菜与鸡蛋上行，猪肉持平：分品项核价",
+    "spec": "全国周度监测；非商品报价",
+    "category_group": "渠道与行业",
+    "price_type": "nonprice",
+    "raw_price": null,
+    "normalized_price": null,
+    "normalized_unit": "",
+    "supplier": "商务部市场运行和消费促进司",
+    "source_title": "9月7日至13日食用农产品和生产资料价格略有上涨",
+    "source_date": "2026-09-17",
+    "collected_at": "2026-09-18",
+    "source_url": "https://cif.mofcom.gov.cn/cif/html/gqzy1/2026/9/1789612037143.html",
+    "region": "全国；统计期2026-09-07至2026-09-13",
+    "evidence": "商务部9月17日发布：9月7日至13日全国食用农产品价格环比上涨0.3%；30种蔬菜平均批发价格上涨1.2%，鸡蛋上涨0.8%，猪肉批发价格与前一周持平。",
+    "conditions": "全国监测口径，非成都供应商或门店成本；猪肉持平不等于成都不涨价，不据此直接调整售价。",
+    "candidate_for_comparison": false,
+    "record_status": "new",
+    "is_new_vs_existing": true
   }
 ]
